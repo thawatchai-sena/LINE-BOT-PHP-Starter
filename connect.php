@@ -1,18 +1,19 @@
 <?php
-$host = "1.2.181.16:3306";
-$username = "root";
-$password = "";
-$objConnect = mysql_connect($host,$username,$password);
-
-if($objConnect)
-{
-	echo "MySQL Connected";
-}
-else
-{
-	echo "MySQL Connect Failed : Error : ".mysql_error();
-}
 
 mysql_close($objConnect);
 
+<?php
+	$objConnect = mysql_connect("1.2.181.16","root","");
+	mysql_select_db("thaiwin_db") or die(mysql_error());
+	if($objConnect)
+	{
+		echo "Database Connected.";
+	}
+	else
+	{
+		echo "Database Connect Failed.";
+	}
+
+	mysql_close($objConnect);
+?>
 
