@@ -1,12 +1,7 @@
-<html>
-<head>
-<title>ThaiCreate.Com</title>
-</head>
-<body>
 <?php
-$host = "us-cdbr-azure-west-b.cleardb.com";
-$username = "bf8b0efb6c1b5b";
-$password = "325bfa78";
+$host = "1.2.181.16:306";
+$username = "root";
+$password = "";
 $objConnect = mysql_connect($host,$username,$password);
 
 if($objConnect)
@@ -19,6 +14,5 @@ else
 }
 
 mysql_close($objConnect);
-?>
-</body>
-</html>
+
+
