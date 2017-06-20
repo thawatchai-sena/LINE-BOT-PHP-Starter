@@ -1,5 +1,5 @@
 <?php
-$host = "1.2.181.16:306";
+$host = "1.2.181.16:3306";
 $username = "root";
 $password = "";
 $objConnect = mysql_connect($host,$username,$password);
