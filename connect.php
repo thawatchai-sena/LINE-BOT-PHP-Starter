@@ -1,20 +1,14 @@
-<html>
-<head>
-<title>ThaiCreate.Com PHP & MySQL Tutorial</title>
-</head>
-<body>
 <?php
-	$objConnect = mysql_connect("180.180.44.12","root","T4cmQLSesETWynRP");
-	if($objConnect)
-	{
-		echo "Database Connected.";
-	}
-	else
-	{
-		echo "Database Connect Failed.";
-	}
+$servername = "180.180.44.12";
+$username = "root";
+$password = "T4cmQLSesETWynRP";
 
-	mysql_close($objConnect);
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
 ?>
-</body>
-</html>
