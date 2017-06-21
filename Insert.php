@@ -13,8 +13,10 @@ $dbname = "arty16_news";
 
 // Create connection สร้างการเชื่อมต่อ
 $conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_query("SET NAMES UTF8");
-// mysql_query("SET NAMES UTF8");
+    
+// ทำให้บันทึกข้อมูลลง MySQL เป็นภาษาไทยได้
+$mysqli->set_charset("utf8");
+    
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
