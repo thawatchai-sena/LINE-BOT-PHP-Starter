@@ -17,6 +17,33 @@ if($msg == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
+ 
+ // ตัวแปรข้อมูล SERVER MySQL สำหรับเชื่อมต่อ
+$servername = "180.180.43.255";
+$username = "root";
+$password = "T4cmQLSesETWynRP";
+$dbname = "arty16_news";
+// Create connection สร้างการเชื่อมต่อ
+$conn = new mysqli($servername, $username, $password, $dbname);
+    
+// ทำให้บันทึกข้อมูลลง MySQL เป็นภาษาไทยได้
+$conn->set_charset("utf8");
+    
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+$sql = "INSERT INTO tblNews (date, subject, details,section)
+VALUES ('2017-06-21', $msg, 'เมื่อ....', 'ฝกบ.')";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
+ 
+ 
+ 
 }else if($msg == "ชื่ออะไร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -44,6 +71,12 @@ if($msg == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
  
+
+
+
+
+
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
