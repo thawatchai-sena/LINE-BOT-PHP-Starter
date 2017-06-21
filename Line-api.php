@@ -10,28 +10,28 @@ $strUrl = "https://api.line.me/v2/bot/message/reply";
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
- 
-if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
+$msg = $arrJson['events'][0]['message']['text'] 
+if($msg == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-}else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
+}else if($msg == "ชื่ออะไร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
- }else if($arrJson['events'][0]['message']['text'] == "ชื่อไร"){
+ }else if($msg == "ชื่อไร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
- }else if($arrJson['events'][0]['message']['text'] == "ใครอะ"){
+ }else if($msg == "ใครอะ"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันก็ไม่รู้เหมือนกัน";
-}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
+}else if($msg == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
@@ -59,7 +59,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $sql = "INSERT INTO tblNews (date, subject, details,section)
-VALUES ('2017-06-21', $arrJson['events'][0]['message']['text'], 'เมื่อ....', 'ฝกบ.')";
+VALUES ('2017-06-21', $msg, 'เมื่อ....', 'ฝกบ.')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
