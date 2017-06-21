@@ -14,8 +14,7 @@ $msg = $arrJson['events'][0]['message']['text'];
 
 
 // วันที่ เดือน ปี ที่บันทึกข้อมูล
-$now = new DateTime(date("Y-m-d"), $dtz);
-// echo $now->format("Y-m-d H:i:s");
+$now = date('Y-m-d H:i:s');
 
 
 // บันทึกข้อความลงฐานข้อมูล
