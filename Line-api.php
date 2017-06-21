@@ -12,12 +12,19 @@ $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 $msg = $arrJson['events'][0]['message']['text'];
 
+
+// วันที่ เดือน ปี ที่บันทึกข้อมูล
+$now = new DateTime(date("Y-m-d"), $dtz);
+// echo $now->format("Y-m-d H:i:s");
+
+
 // บันทึกข้อความลงฐานข้อมูล
 // ตัวแปรข้อมูล SERVER MySQL สำหรับเชื่อมต่อ
 $servername = "180.180.43.255";
 $username = "root";
 $password = "T4cmQLSesETWynRP";
 $dbname = "arty16_news";
+
 // Create connection สร้างการเชื่อมต่อ
 $conn = new mysqli($servername, $username, $password, $dbname);
     
@@ -29,7 +36,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $sql = "INSERT INTO tblNews (date, subject, details, section)
-VALUES ('2017-06-21', '$msg', 'เมื่อ....', 'ฝกบ.')";
+VALUES ('$now->format("Y-m-d H:i:s")', '$msg', 'เมื่อ....', 'ฝกบ.')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
