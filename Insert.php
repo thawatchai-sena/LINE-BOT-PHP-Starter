@@ -15,7 +15,7 @@ $dbname = "arty16_news";
 $conn = new mysqli($servername, $username, $password, $dbname);
     
 // ทำให้บันทึกข้อมูลลง MySQL เป็นภาษาไทยได้
-$mysqli->set_charset("utf8");
+$conn->set_charset("utf8");
     
 // Check connection
 if ($conn->connect_error) {
