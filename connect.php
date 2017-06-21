@@ -11,5 +11,3 @@
 	}
 
 	mysql_close($objConnect);
-
-?>
