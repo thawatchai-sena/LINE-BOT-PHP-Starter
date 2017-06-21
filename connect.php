@@ -1,6 +1,10 @@
+<html>
+<head>
+<title>ThaiCreate.Com PHP & MySQL Tutorial</title>
+</head>
+<body>
 <?php
 	$objConnect = mysql_connect("180.180.44.12","root","T4cmQLSesETWynRP");
-	mysql_select_db("thaiwin_db") or die(mysql_error());
 	if($objConnect)
 	{
 		echo "Database Connected.";
@@ -11,3 +15,6 @@
 	}
 
 	mysql_close($objConnect);
+?>
+</body>
+</html>
