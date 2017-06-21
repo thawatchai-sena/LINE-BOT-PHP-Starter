@@ -1,6 +1,6 @@
 <?php
 // ตัวแปรข้อมูล SERVER MySQL สำหรับเชื่อมต่อ
-$servername = "180.180.44.12";
+$servername = "1.1.128.169";
 $username = "root";
 $password = "T4cmQLSesETWynRP";
 $dbname = "arty16_news";
@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 } 
 
 $sql = "INSERT INTO tblNews (date, subject, details,section)
-VALUES ('2017-06-21', 'John', 'Doe', 'john@example.com')";
+VALUES ('2017-06-21', 'ผบ.ป.๖ พัน.๑๖ ตรวจคลัง สป.๕', 'เมื่อ....', 'ฝกบ.')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
