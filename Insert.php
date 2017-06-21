@@ -1,3 +1,9 @@
+<html>
+<head>
+<title>ThaiCreate.Com PHP & UTF-8</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+</head>
+<body>
 <?php
 // ตัวแปรข้อมูล SERVER MySQL สำหรับเชื่อมต่อ
 $servername = "180.180.43.255";
@@ -25,3 +31,4 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+</html>
