@@ -1,6 +1,6 @@
 <?php
 // ตัวแปรข้อมูล SERVER MySQL สำหรับเชื่อมต่อ
-$servername = "1.1.128.169";
+$servername = "180.180.43.255";
 $username = "root";
 $password = "T4cmQLSesETWynRP";
 $dbname = "arty16_news";
