@@ -19,7 +19,7 @@ $now = date('Y-m-d H:i:s');
 
 // บันทึกข้อความลงฐานข้อมูล
 // ตัวแปรข้อมูล SERVER MySQL สำหรับเชื่อมต่อ
-$servername = "118.175.249.2";
+$servername = "118.175.249.210";
 $username = "root";
 $password = "T4cmQLSesETWynRP";
 $dbname = "arty16_news";
