@@ -10,7 +10,8 @@ $strUrl = "https://api.line.me/v2/bot/message/reply";
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
-$msg = $arrJson['events'][0]['message']['text'] 
+$msg = $arrJson['events'][0]['message']['text'];
+
 if($msg == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
