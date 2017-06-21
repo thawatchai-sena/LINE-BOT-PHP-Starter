@@ -7,7 +7,7 @@ $dbname = "arty16_news";
 
 // Create connection สร้างการเชื่อมต่อ
 $conn = new mysqli($servername, $username, $password, $dbname);
-query('SET NAMES UTF8');
+mysqli_query('SET NAMES UTF8');
 // mysql_query("SET NAMES UTF8");
 // Check connection
 if ($conn->connect_error) {
