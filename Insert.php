@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 } 
 
 $sql = "INSERT INTO tblNews (date, subject, details, section)
-VALUES ('21/06/2560', 'John', 'Doe', 'john@example.com')";
+VALUES ('2017-06-21', 'ผบ.ป.6 พัน.16', 'ตรวจคลัง สป.5', 'ฝกร')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
