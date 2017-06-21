@@ -5,6 +5,10 @@
 </head>
 <body>
 <?php
+    
+// ตัวแปรสำหรับรับค่า
+$message = $_GET["msg"];
+        
 // ตัวแปรข้อมูล SERVER MySQL สำหรับเชื่อมต่อ
 $servername = "180.180.43.255";
 $username = "root";
@@ -23,7 +27,7 @@ if ($conn->connect_error) {
 } 
 
 $sql = "INSERT INTO tblNews (date, subject, details,section)
-VALUES ('2017-06-21', 'ผบ.ป.๖ พัน.๑๖ ตรวจคลัง สป.๕', 'เมื่อ....', 'ฝกบ.')";
+VALUES ('2017-06-21', $message, 'เมื่อ....', 'ฝกบ.')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
