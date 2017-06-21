@@ -11,6 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
+mysql_query("SET NAMES TIS620");
 
 $sql = "INSERT INTO tblNews (date, subject, details,section)
 VALUES ('2017-06-21', 'ผบ.ป.๖ พัน.๑๖ ตรวจคลัง สป.๕', 'เมื่อ....', 'ฝกบ.')";
