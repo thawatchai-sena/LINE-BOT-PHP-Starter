@@ -36,7 +36,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $sql = "INSERT INTO tblNews (date, subject, details, section)
-VALUES ('$now->format("Y-m-d H:i:s")', '$msg', 'เมื่อ....', 'ฝกบ.')";
+VALUES ('$now', '$msg', 'เมื่อ....', 'ฝกบ.')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
