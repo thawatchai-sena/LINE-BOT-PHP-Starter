@@ -33,8 +33,8 @@ $conn->set_charset("utf8");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "INSERT INTO tblNews (date, subject, details,section)
-VALUES ('2017-06-21', $msg, 'เมื่อ....', 'ฝกบ.')";
+$sql = "INSERT INTO tblNews (date, subject, details, section)
+VALUES ('2017-06-21', '$msg', 'เมื่อ....', 'ฝกบ.')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
