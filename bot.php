@@ -3,6 +3,9 @@ $access_token = 'wFclPDWuQ98RUXWnnkzOsDpxOOtCMw9GqqbO1IBSYXAIKdVqyDDqsYwHjNXZ8Ha
 
 // Get POST body content
 $content = file_get_contents('php://input');
+
+$arrJson = json_decode($content, true);
+
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
@@ -13,7 +16,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			//$text = $event['message']['text'];
-			 $arrPostData = array();
+			$arrPostData = array();
   			$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   			$arrPostData['messages'][0]['type'] = "text";
   			$arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
