@@ -12,7 +12,11 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['text'];
+			//$text = $event['message']['text'];
+			 $arrPostData = array();
+  			$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  			$arrPostData['messages'][0]['type'] = "text";
+  			$arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -31,7 +35,9 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			$post = json_encode($data);
+			
+			//Sent Post
+			$post = json_encode($arrPostData);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
